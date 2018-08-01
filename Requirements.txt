@@ -1,0 +1,30 @@
+Bank Account Application
+
+3 types of accounts
+
+CurrentAccount
+SavingsAccount
+StudentAccount
+
+BaseClass of BankAccount
+
+BassClass should have the following properties and functions(methods)
+
+Properties
+____________________
+AccountBalance
+Id
+AccountHolderName
+
+
+Methods
+______________________
+Deposit
+Withdraw
+GetBalance
+
+A menu to be able to select the account you want to perform an action on, 
+such as withdraw deposit ect.
+
+
+

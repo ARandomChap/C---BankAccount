@@ -1,23 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankAccount
 {
-	class CurrentAccount
+	public class CurrentAccount : BankAccount
 	{
-		//double balance = 1234;
-
-		public double Account()
+		public override void StartAccountMenu()
 		{
-			var account = new BankAccount();
+			base.StartAccountMenu();
 
-			double Balance = Convert.ToDouble(account.GetBalance());
+			Console.WriteLine("4. Overdraft");
+			var result = Console.ReadLine();
 
-			return Balance;
+			int val;
+			bool ifSuccess = int.TryParse(result, out val);
+
+			if (ifSuccess)
+			{
+				Selecter(val);
+			}
 		}
-		
+
+		public void Overdraft()
+		{
+			Console.WriteLine("Overdraft Added.");
+			Console.ReadLine();
+		}
+
+		public void Selecter(int option)
+		{
+			switch (option)
+			{
+				case 1:
+					GetBalance();
+					break;
+
+				case 2:
+					Deposit();
+					break;
+
+				case 3:
+					Withdraw();
+					break;
+
+				case 4:
+					Overdraft();
+					break;
+			}
+		}
 	}
 }

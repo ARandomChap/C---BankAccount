@@ -1,62 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankAccount
 {
-	class BankAccount
+	public class BankAccount : IBankAccount
 	{
 		int ID = 0;
-		double AccountBalance = 0;
+		double AccountBalance;
 		string AccountHolderName = "";
 
 		public double GetBalance()
 		{
+			Console.WriteLine("Your Balance is: " + AccountBalance);
+			Console.ReadLine();
 			return AccountBalance;
 		}
 
-		public void Deposit(double amount)
+		public void Deposit()
 		{
+			double amount;
+			Console.WriteLine("Enter the amount you would like to deposit...");
+			amount = Convert.ToDouble(Console.ReadLine());
+
 			AccountBalance = AccountBalance + amount;
+
+			Console.WriteLine("Your new total is: " + AccountBalance);
+			Console.ReadLine();
 		}
 
-		public void Withdraw(double amount)
+		public void Withdraw()
 		{
+			double amount;
+			Console.WriteLine("Enter the amount you would like to Withdraw...");
+			amount = Convert.ToDouble(Console.ReadLine());
+
 			AccountBalance = AccountBalance - amount;
+
+			Console.WriteLine("Your new total is: " + AccountBalance);
+			Console.ReadLine();
 		}
 
-		public void StartAccountMenu(int account)
+		public virtual void StartAccountMenu()
 		{
-			Console.WriteLine("Please select option 1 (Withdraw), 2 (Deposit) or 3 (Balance).");
-			var result = Console.ReadLine();
 
-			if (int.Parse(result) == 1)
-			{
-				Console.WriteLine("Please enter the amount you would like to withdraw.");
-				double amount = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Please select one of the following options...");
+			Console.WriteLine("1. Balance");
+			Console.WriteLine("2. Deposit");
+			Console.WriteLine("3. Withdraw");
 
-				amount = AccountBalance - amount;
-
-				Console.WriteLine("Your withdrawl has been procoseed.");
-			}
-
-			if (int.Parse(result) == 2)
-			{
-				Console.WriteLine("Please enter the amount you would like to deposit.");
-				double amount = Convert.ToDouble(Console.ReadLine());
-
-				amount = AccountBalance + amount;
-
-				Console.WriteLine("Your deposit has been procoseed.");
-			}
-
-			if (int.Parse(result) == 3)
-			{
-				Console.WriteLine("Your balance: " + AccountBalance);
-				Console.ReadLine();
-			}
 		}
 	}
 }
+

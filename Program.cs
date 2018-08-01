@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankAccount
 {
@@ -10,29 +6,40 @@ namespace BankAccount
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("This Outputs onto a cmd screen");
-			var something = Console.ReadLine();
+			//Console.WriteLine("Press enter to start...");
+			//var something = Console.ReadLine();
 
-			Console.WriteLine("Please select option 1 (Current Account), 2 (Savings Account) or 3 (Student Account).");
-			var result = Console.ReadLine();
-
-			if (int.Parse(result) == 1)
+			while (true)
 			{
-				var account = new BankAccount();
-				account.StartAccountMenu(1);
-			}
+				Console.WriteLine("Please select option 1 (Current Account), 2 (Savings Account) or 3 (Student Account).");
+				var result = Console.ReadLine();
 
-			if (int.Parse(result) == 2)
-			{
-				var account = new BankAccount();
-				account.StartAccountMenu(2);
-			}
+				int val;
+				bool ifSuccess = int.TryParse(result, out val);
 
-			if (int.Parse(result) == 3)
-			{
-				var account = new BankAccount();
-				account.StartAccountMenu(3);
+				if (ifSuccess)
+				{
+					var account = Selecter(val);
+
+					account.StartAccountMenu();
+				}
 			}
+		}
+
+		public static IBankAccount Selecter(int account)
+		{
+			switch(account)
+			{
+				case 1:
+					return new CurrentAccount();
+
+				case 2:
+					return new SavingsAccount();
+
+				case 3:
+					return new StudentAccount();
+			}
+			return null;
 		}
 	}
 }
