@@ -41,12 +41,10 @@ namespace BankAccount
 
 		public virtual void StartAccountMenu()
 		{
-
 			Console.WriteLine("Please select one of the following options...");
 			Console.WriteLine("1. Balance");
 			Console.WriteLine("2. Deposit");
 			Console.WriteLine("3. Withdraw");
-
 		}
 	}
 }

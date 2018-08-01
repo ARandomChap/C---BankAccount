@@ -6,17 +6,24 @@ namespace BankAccount
 	{
 		public override void StartAccountMenu()
 		{
-			Console.WriteLine("Please select option 1 (Balance), 2 (Deposit) or 3 (Withdraw).");
+			base.StartAccountMenu();
+
+			Console.WriteLine("4. Student loan");
 			var result = Console.ReadLine();
 
 			int val;
 			bool ifSuccess = int.TryParse(result, out val);
 
-
 			if (ifSuccess)
 			{
 				Selecter(val);
 			}
+		}
+
+		public void StudentLoan()
+		{
+			Console.WriteLine("You fool, can't believe you're paying £9,000 a year for this XD");
+			Console.ReadLine();
 		}
 
 		public void Selecter(int option)
@@ -33,6 +40,10 @@ namespace BankAccount
 
 				case 3:
 					Withdraw();
+					break;
+
+				case 4:
+					StudentLoan();
 					break;
 			}
 
