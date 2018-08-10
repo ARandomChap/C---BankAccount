@@ -2,13 +2,16 @@
 
 namespace BankAccount
 {
-	public class SavingsAccount : BankAccount
+	public class NationwideCurrentAccount : BankAccount
 	{
+		double Interest = 1.0253; /* Interest % for one year */
+		int Period = 1; /* one year */
+
 		public override void StartAccountMenu()
 		{
 			base.StartAccountMenu();
 
-			Console.WriteLine("4. Request access stats");
+			Console.WriteLine("4. Overdraft");
 			var result = Console.ReadLine();
 
 			int val;
@@ -19,10 +22,10 @@ namespace BankAccount
 				Selecter(val);
 			}
 		}
-	
-		public void AccessStats()
+
+		public void Overdraft()
 		{
-			Console.WriteLine("Access restricted, account still in probationary state.");
+			Console.WriteLine("Overdraft Added.");
 			Console.ReadLine();
 		}
 
@@ -43,9 +46,8 @@ namespace BankAccount
 					break;
 
 				case 4:
-					AccessStats();
+					Overdraft();
 					break;
-
 			}
 		}
 	}

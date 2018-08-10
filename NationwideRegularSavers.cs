@@ -2,13 +2,13 @@
 
 namespace BankAccount
 {
-	public class CurrentAccount : BankAccount
+	public class NationwideRegularSavers : BankAccount
 	{
 		public override void StartAccountMenu()
 		{
 			base.StartAccountMenu();
 
-			Console.WriteLine("4. Overdraft");
+			Console.WriteLine("4. Request access stats");
 			var result = Console.ReadLine();
 
 			int val;
@@ -19,10 +19,10 @@ namespace BankAccount
 				Selecter(val);
 			}
 		}
-
-		public void Overdraft()
+	
+		public void AccessStats()
 		{
-			Console.WriteLine("Overdraft Added.");
+			Console.WriteLine("Access restricted, account still in probationary state.");
 			Console.ReadLine();
 		}
 
@@ -43,8 +43,9 @@ namespace BankAccount
 					break;
 
 				case 4:
-					Overdraft();
+					AccessStats();
 					break;
+
 			}
 		}
 	}

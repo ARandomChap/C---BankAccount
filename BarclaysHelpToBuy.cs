@@ -2,7 +2,7 @@
 
 namespace BankAccount
 {
-	public class StudentAccount : BankAccount
+	public class BarclaysHelpToBuy : BankAccount
 	{
 		public override void StartAccountMenu()
 		{

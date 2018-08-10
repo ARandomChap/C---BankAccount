@@ -43,12 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankAccount.cs" />
-    <Compile Include="CurrentAccount.cs" />
+    <Compile Include="NationwideCurrentAccount.cs" />
     <Compile Include="IBankAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SavingsAccount.cs" />
-    <Compile Include="StudentAccount.cs" />
+    <Compile Include="NationwideRegularSavers.cs" />
+    <Compile Include="BarclaysHelpToBuy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -4,3 +4,4 @@ C:\Users\jack chapman\source\repos\BankAccount\BankAccount\bin\Debug\BankAccount
 C:\Users\jack chapman\source\repos\BankAccount\BankAccount\obj\Debug\BankAccount.csproj.CoreCompileInputs.cache
 C:\Users\jack chapman\source\repos\BankAccount\BankAccount\obj\Debug\BankAccount.exe
 C:\Users\jack chapman\source\repos\BankAccount\BankAccount\obj\Debug\BankAccount.pdb
+C:\Users\jack chapman\source\repos\BankAccount\BankAccount\obj\Debug\BankAccount.csprojAssemblyReference.cache
